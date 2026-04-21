@@ -34,9 +34,9 @@ class RAGPipeline:
     # Generate Answer
     # =====================================
 
-    def generate_answer(self, query: str):
+    def generate_answer(self, query: str, top_k: int = 5):
 
-        retrieved_docs = self.searcher.search(query, top_k=5)
+        retrieved_docs = self.searcher.search(query, top_k=top_k)
 
         context = self.build_context(retrieved_docs)
 
@@ -52,6 +52,10 @@ Question:
 {query}
 
 Provide a clear and concise explanation.
+
+You are not allowed to answer with information that is not present in the context. If you don't know the answer, say you don't know.
+
+You can only answer questions related to MITRE ATT&CK information provided in the context.
 """
 
         response = client.chat.completions.create(
