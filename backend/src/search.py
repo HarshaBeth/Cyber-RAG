@@ -1,12 +1,15 @@
 import json
+import os
+from pathlib import Path
+
 import faiss
 import numpy as np
-import os
 from dotenv import load_dotenv
 from openai import OpenAI
 
 
-load_dotenv()
+BASE_DIR = Path(__file__).resolve().parents[1]
+load_dotenv(BASE_DIR / ".env")
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 EMBEDDING_MODEL = "text-embedding-3-large"
@@ -19,6 +22,17 @@ class SemanticSearcher:
 
         with open(metadata_path, "r") as f:
             self.metadata = json.load(f)
+
+        metadata_dir = Path(metadata_path).resolve().parent
+        documents_path = metadata_dir / "rag_documents.json"
+        self.documents_by_id = {}
+
+        if documents_path.exists():
+            with open(documents_path, "r") as f:
+                documents = json.load(f)
+            self.documents_by_id = {
+                document["id"]: document for document in documents
+            }
 
     # ======================================
     # Embed Query
@@ -47,6 +61,12 @@ class SemanticSearcher:
 
         for idx in indices[0]:
             if idx < len(self.metadata):
-                results.append(self.metadata[idx])
+                result = dict(self.metadata[idx])
+                document = self.documents_by_id.get(result["id"])
+
+                if document is not None:
+                    result["content"] = document.get("content", "")
+
+                results.append(result)
 
         return results

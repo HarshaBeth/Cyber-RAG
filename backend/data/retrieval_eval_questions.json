@@ -1,0 +1,122 @@
+[
+  {
+    "question_id": "q01",
+    "question": "What ATT&CK technique covers abusing Windows Task Scheduler to run malware at startup or on a recurring basis?",
+    "gold_technique_ids": ["T1053.005"],
+    "reference_answer": "The relevant ATT&CK technique is Scheduled Task (T1053.005), where adversaries abuse the Windows Task Scheduler to run malicious code at startup or on a schedule for execution and persistence."
+  },
+  {
+    "question_id": "q02",
+    "question": "Which technique is about abusing WMI to execute commands or payloads on Windows systems?",
+    "gold_technique_ids": ["T1047"],
+    "reference_answer": "The technique is Windows Management Instrumentation (T1047), which involves abusing WMI to execute commands or payloads and interact with local or remote Windows systems."
+  },
+  {
+    "question_id": "q03",
+    "question": "Which ATT&CK technique involves discovering the current logged-in user or other user accounts on a system?",
+    "gold_technique_ids": ["T1033"],
+    "reference_answer": "The relevant ATT&CK technique is System Owner/User Discovery (T1033), where adversaries identify the current user, primary user, or other user accounts on a system."
+  },
+  {
+    "question_id": "q04",
+    "question": "What technique captures user keystrokes to steal credentials as they are typed?",
+    "gold_technique_ids": ["T1056.001"],
+    "reference_answer": "The technique is Keylogging (T1056.001), which captures user keystrokes to steal credentials and other sensitive information as they are typed."
+  },
+  {
+    "question_id": "q05",
+    "question": "Which technique uses mailbox or inbox rules to hide security alerts or phishing emails from a compromised user?",
+    "gold_technique_ids": ["T1564.008"],
+    "reference_answer": "The relevant technique is Email Hiding Rules (T1564.008), where adversaries create or modify inbox rules to move, delete, or hide emails such as security alerts or phishing messages."
+  },
+  {
+    "question_id": "q06",
+    "question": "What technique covers defacing an organization's public-facing website to spread propaganda or intimidate?",
+    "gold_technique_ids": ["T1491.002"],
+    "reference_answer": "The technique is External Defacement (T1491.002), which involves defacing public-facing systems such as websites to spread propaganda, intimidate, or undermine trust."
+  },
+  {
+    "question_id": "q07",
+    "question": "Which ATT&CK technique describes using DNS, NTP, or similar services to amplify a reflected denial-of-service attack?",
+    "gold_technique_ids": ["T1498.002"],
+    "reference_answer": "The relevant ATT&CK technique is Reflection Amplification (T1498.002), where adversaries reflect traffic through third-party services such as DNS or NTP to amplify a denial-of-service attack."
+  },
+  {
+    "question_id": "q08",
+    "question": "What technique hides a backdoor port until a specific sequence of connection attempts is sent to closed ports?",
+    "gold_technique_ids": ["T1205.001"],
+    "reference_answer": "The technique is Port Knocking (T1205.001), in which adversaries hide or activate a service only after a predefined sequence of connection attempts is sent to closed ports."
+  },
+  {
+    "question_id": "q09",
+    "question": "Which technique uses SMB admin shares like C$ or ADMIN$ for lateral movement and remote file operations?",
+    "gold_technique_ids": ["T1021.002"],
+    "reference_answer": "The relevant technique is SMB/Windows Admin Shares (T1021.002), where adversaries use administrative shares such as C$ or ADMIN$ over SMB for lateral movement, remote file access, and execution."
+  },
+  {
+    "question_id": "q10",
+    "question": "What technique hides malicious content by embedding payloads inside otherwise benign files or binaries?",
+    "gold_technique_ids": ["T1027.009"],
+    "reference_answer": "The technique is Embedded Payloads (T1027.009), which involves hiding malicious content inside otherwise benign files or binaries to conceal payloads from defenders."
+  },
+  {
+    "question_id": "q11",
+    "question": "Which technique involves modifying PAM modules on Linux or macOS to steal credentials or create a backdoor?",
+    "gold_technique_ids": ["T1556.003"],
+    "reference_answer": "The relevant ATT&CK technique is Pluggable Authentication Modules (T1556.003), where adversaries modify PAM components on Linux or macOS to steal credentials or create backdoor access."
+  },
+  {
+    "question_id": "q12",
+    "question": "What persistence technique runs malicious commands whenever PowerShell starts by modifying profile.ps1?",
+    "gold_technique_ids": ["T1546.013"],
+    "reference_answer": "The technique is PowerShell Profile (T1546.013), which achieves persistence by modifying profile.ps1 so malicious commands run whenever PowerShell starts."
+  },
+  {
+    "question_id": "q13",
+    "question": "Which technique elevates privileges by bypassing Windows User Account Control prompts or protections?",
+    "gold_technique_ids": ["T1548.002"],
+    "reference_answer": "The relevant ATT&CK technique is Bypass User Account Control (T1548.002), where adversaries evade UAC protections to elevate privileges without normal prompts or restrictions."
+  },
+  {
+    "question_id": "q14",
+    "question": "What credential access technique extracts hashes from the Windows Security Account Manager database?",
+    "gold_technique_ids": ["T1003.002"],
+    "reference_answer": "The technique is Security Account Manager (T1003.002), which involves extracting credential material such as password hashes from the Windows SAM database."
+  },
+  {
+    "question_id": "q15",
+    "question": "Which defense evasion technique changes file timestamps to make malicious files blend in with older files?",
+    "gold_technique_ids": ["T1070.006"],
+    "reference_answer": "The relevant ATT&CK technique is Timestomp (T1070.006), where adversaries modify file timestamps so malicious files appear older and blend in with legitimate files."
+  },
+  {
+    "question_id": "q16",
+    "question": "What technique poisons LLMNR or NBT-NS to capture or relay NTLM authentication traffic?",
+    "gold_technique_ids": ["T1557.001"],
+    "reference_answer": "The technique is LLMNR/NBT-NS Poisoning and SMB Relay (T1557.001), in which adversaries spoof local name resolution to capture or relay NTLM authentication traffic."
+  },
+  {
+    "question_id": "q17",
+    "question": "Which persistence technique inserts commands into .bashrc, .bash_profile, or similar shell startup files?",
+    "gold_technique_ids": ["T1546.004"],
+    "reference_answer": "The relevant technique is Unix Shell Configuration Modification (T1546.004), where adversaries add malicious commands to shell startup files such as .bashrc or .bash_profile for persistence."
+  },
+  {
+    "question_id": "q18",
+    "question": "What defense evasion technique hides malware by setting files or directories to hidden?",
+    "gold_technique_ids": ["T1564.001"],
+    "reference_answer": "The technique is Hidden Files and Directories (T1564.001), which hides malicious files or folders by marking them as hidden or naming them in ways that conceal them from normal view."
+  },
+  {
+    "question_id": "q19",
+    "question": "Which collection technique compresses or encrypts stolen files with tools like tar, zip, or 7-Zip before exfiltration?",
+    "gold_technique_ids": ["T1560.001"],
+    "reference_answer": "The relevant ATT&CK technique is Archive via Utility (T1560.001), where adversaries use utilities such as tar, zip, or 7-Zip to compress or encrypt collected data before exfiltration."
+  },
+  {
+    "question_id": "q20",
+    "question": "What proxy execution technique abuses rundll32.exe to launch malicious DLL code?",
+    "gold_technique_ids": ["T1218.011"],
+    "reference_answer": "The technique is Rundll32 (T1218.011), which abuses rundll32.exe to proxy execution of malicious DLL code or related payloads."
+  }
+]
